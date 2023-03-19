@@ -43,6 +43,56 @@ class ModelTrainer:
                 "CatBoosting Regressor": CatBoostRegressor(verbose=False),
                 "AdaBoost Regressor": AdaBoostRegressor(),
             }
+            # param_grid is used for hyper paramater tuning of model
+            # param_grid = {
+            #     'Linear Regression': {
+            #         'fit_intercept': [True, False],
+            #         'normalize': [True, False],
+            #     },
+            #     'Lasso': {
+            #         'alpha': [0.1, 1.0, 10.0],
+            #         'fit_intercept': [True, False],
+            #         'normalize': [True, False],
+            #     },
+            #     'Ridge': {
+            #         'alpha': [0.1, 1.0, 10.0],
+            #         'fit_intercept': [True, False],
+            #         'normalize': [True, False],
+            #     },
+            #     'K-Neighbors Regressor': {
+            #         'n_neighbors': [5, 10, 20],
+            #         'weights': ['uniform', 'distance'],
+            #         'algorithm': ['auto', 'ball_tree', 'kd_tree', 'brute'],
+            #     },
+            #     'Decision Tree': {
+            #         'max_depth': [None, 5, 10],
+            #         'min_samples_split': [2, 5, 10],
+            #         'min_samples_leaf': [1, 2, 4],
+            #     },
+            #     'Random Forest Regressor': {
+            #         'n_estimators': [100, 500],
+            #         'max_depth': [None, 5, 10],
+            #         'min_samples_split': [2, 5, 10],
+            #         'min_samples_leaf': [1, 2, 4],
+            #     },
+            #     'XGBRegressor': {
+            #         'n_estimators': [100, 500],
+            #         'max_depth': [None, 5, 10],
+            #         'learning_rate': [0.01, 0.1, 0.5],
+            #     },
+            #     'CatBoosting Regressor': {
+            #         'n_estimators': [100, 500],
+            #         'max_depth': [None, 5, 10],
+            #         'learning_rate': [0.01, 0.1, 0.5],
+            #         'silent': [True, False],
+            #     },
+            #     'AdaBoost Regressor': {
+            #         'n_estimators': [50, 100, 500],
+            #         'learning_rate': [0.01, 0.1, 0.5],
+            #         'loss': ['linear', 'square', 'exponential'],
+            #     },
+            # }
+
 
             logging.info("Training models")
             model_report:dict=evaluate_model(X_train,Y_train,X_test,Y_test,models=models)
