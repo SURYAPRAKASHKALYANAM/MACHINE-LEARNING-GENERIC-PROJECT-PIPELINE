@@ -6,7 +6,7 @@ from datetime import datetime
 # this is the path where the logs will be stored
 LOG_FILE=f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
 logs_path=os.path.join(os.getcwd(),"logs",LOG_FILE)
-os.mkdir(logs_path,exist_ok=True)
+os.makedirs(logs_path,exist_ok=True)
 
 
 # this is the function which is used to get the logger object 
